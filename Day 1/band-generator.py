@@ -31,3 +31,28 @@
 #Second try without variable
 # print("Your name count is", len( input("What is your name? ")))
 
+#Exercise 4 > Variables
+
+# a = input("a: ")
+# b = input("b: ")
+
+# temp = a
+# a = b
+# b = temp
+
+# # a, b = b, a
+
+# print("a = " + a)
+# print("b = " + b)
+
+
+## Band Generator
+
+city_name = input("What is the name of the city you grew up in?\n")
+#
+user_age = input("What is your age?\n")
+#
+pet_name = input("Your pets name?\n")
+
+input("Click enter to see your band name! ")
+print("Your band name is:" + city_name + " " + pet_name + " " + user_age)
