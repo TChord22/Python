@@ -1,3 +1,8 @@
-character_name = "Tasha"
-character_age = "30"
-print("Hi, my name is " + character_name + " and I am " + character_age)
+#Word Counter
+# counter = input("Insert Lorem ipsum here... ")
+# print("result:")
+
+name = "Tasha"
+age = "21"
+
+print("My name is " + name + " and I am " + age)
