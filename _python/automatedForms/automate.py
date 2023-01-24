@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+from random_word import RandomWords
 
 #Instantiate the driver as a variable called browser
 browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -11,12 +12,14 @@ browser.get("https://milani.rhi-staging.co.za/student-registration/")
 browser.maximize_window()
 #browser.quit()
 
+r = RandomWords()
+
 #Locate the fields within the form
 full_name = browser.find_element(By.ID, "input_9_21")
-full_name.send_keys("PythonTester")
+full_name.send_keys(str(r.get_random_word()))
 
 email = browser.find_element(By.ID, "input_9_12")
-email.send_keys("pythontriggertest@rhidigital.co.za")
+email.send_keys(str(r.get_random_word()) + "@rhidigital.co.za")
 
 password = browser.find_element(By.ID, "input_9_20")
 confirm_password = browser.find_element(By.ID, "input_9_20_2")
@@ -30,4 +33,4 @@ register_button = browser.find_element(By.ID, "gform_submit_button_9")
 register_button.click()
 
 #Look for the next step after registration
-assert browser.title == "Student Registration - Milani Education" 
+assert browser.title == "Dashboard - Milani Education"
